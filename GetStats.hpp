@@ -27,7 +27,7 @@ public:
         arr[1]=temp->data;
         double avg = temp->data;
         arr[2]=1;
-        temp->next;
+        temp=temp->next;
         while(temp!=nullptr){
             if (temp->data<arr[0]){
                 arr[0]=temp->data;
@@ -37,6 +37,8 @@ public:
             }
             avg+=temp->data;
             arr[2]++;
+            temp=temp->next;
+
         }
         arr[2]=static_cast<int>(avg/arr[2]);
         return arr;
