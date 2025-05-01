@@ -1,5 +1,6 @@
 #pragma once
-
+#include <iostream>
+#include <string>
 struct Node {
     int data;
     Node* next;
@@ -13,22 +14,21 @@ public:
         newNode->next = head;
         head = newNode;
     }
-    
+    void print(){
+        Node* temp = head;
+        while (temp!=nullptr){
+            std::cout<<std::to_string(temp->data)<<std::endl;
+            temp=temp->next;
+        }
+    }
     LinkedList reverseList() const {
         LinkedList newList;
         Node* temp = head;
-        int size=0;
         while (temp!=nullptr){
-            size++;
+            newList.addHead(temp->data);
             temp=temp->next;
         }
-        for (int i = size; i>0; i--){
-            temp=head;
-            for (int j = 0; j < i-1; j++){
-                temp=temp->next;
-            }
-            newList.addHead(temp->data);
-        }
+
         return newList;
     }
 
