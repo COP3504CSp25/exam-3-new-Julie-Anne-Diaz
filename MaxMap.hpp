@@ -14,7 +14,7 @@ float consultMax(const std::string& search_term, const std::map<std::string, std
     if (nums.size()==0){
         return -1;
     }
-    int max=nums[0];
+    float max=nums[0];
     for (size_t i = 1; i < nums.size(); i++){
         if (max < nums[i]){
             max=nums[i];
